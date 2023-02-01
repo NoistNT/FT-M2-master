@@ -84,11 +84,10 @@ function buildToDo(todo, index) {
   toDoShell.appendChild(completeCheckbox)
   toDoShell.appendChild(removeToDoButton)
   toDoText.addEventListener('click', completeToDo)
-  //remove.addEventListener('click', removeToDo)
+  //removeToDoButton.addEventListener('click', removeToDo)
 
   return toDoShell
 }
-
 
 // La función 'buildToDos' debe crear un array de objetos toDo y devolverlo
 // Recibirá como parámetro un array de objetos ToDo
@@ -169,7 +168,7 @@ const addButton = document.querySelector('#addButton')
 addButton.addEventListener('click', addToDo)
 
 const removeButton = document.querySelector('#removeButton')
-removeButton.addEventListener('click', remove)
+// removeButton.addEventListener('click', remove)
 
 // Hacer un event que cuando keydown if key === enter, le haga click al boton
 
