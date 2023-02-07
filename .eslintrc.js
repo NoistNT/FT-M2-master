@@ -4,13 +4,19 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: 'standard',
+  extends: [
+    'plugin:react/recommended',
+    'standard'
+  ],
   overrides: [
   ],
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
+  plugins: [
+    'react'
+  ],
   rules: {
   }
 }
