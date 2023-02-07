@@ -13,7 +13,7 @@ function App () {
           species={Rick.species}
           gender={Rick.gender}
           image={Rick.image}
-          onClose={() => window.alert('Emulamos que se cierra la card')}
+          onClose={() => alert('Emulamos que se cierra la card')}
         />
       </div>
       <hr />
@@ -25,7 +25,7 @@ function App () {
       <hr />
       <div>
         <SearchBar
-          onSearch={(characterID) => window.alert(characterID)}
+          onSearch={(characterID) => alert(characterID)}
         />
       </div>
     </div>
