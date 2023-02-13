@@ -60,6 +60,7 @@
       "roots": [
          "<rootDir>"
       ],
+      "testEnvironment": "jsdom",
       "modulePaths": [],
       "setupFilesAfterEnv": [
          "<rootDir>/package.json"
