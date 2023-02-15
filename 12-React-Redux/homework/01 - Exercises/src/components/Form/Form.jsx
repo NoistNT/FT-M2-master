@@ -1,21 +1,28 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
-import Caja from '../../assets/caja.png';
-import './form.css';
+import React from 'react'
+import { connect } from 'react-redux'
+import Caja from '../../assets/caja.png'
+import './form.css'
+import {addProduct} from '../../redux/actions/actions'
 
 class Form extends React.Component{
    constructor(props){
       super(props)
 
       this.state = {
-         name: "",
-         price: "",
-         id: ""
+         name: '',
+         price: '',
+         id: ''
       }
    }
 
-   handleInputChange = (event) => {
-      this.setState({ ...this.state, [event.target.name]: event.target.value });
+   handleInputChange = (e) => {
+      e.preventDefault()
+      this.setState({ ...this.state, [e.target.name]: e.target.value })
+   }
+
+   handleSubmit = (e) => {
+      e.preventDefault()
+      this.props.addProduct({...this.state, id: Date.now()})
    }
 
    render(){
@@ -38,13 +45,17 @@ class Form extends React.Component{
                   value={this.state.price}
                />
             </div>
-            <button className='formBtn'>¡ADD!</button>
+            <button className='formBtn' onClick={this.handleSubmit}>¡ADD!</button>
             <img src={Caja} alt='' className='logo' />
          </form>
       )
    }
 }
 
-export function mapDispatchToProps() {}
+export function mapDispatchToProps(dispatch) {
+   return {
+      addProduct: (product) => dispatch(addProduct(product))
+   }
+}
 
-export default connect(null, mapDispatchToProps)(Form);
+export default connect(null, mapDispatchToProps)(Form)
